@@ -80,15 +80,22 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3 class="timeline-title">Robotics Engineer</h3>
-                            <span class="timeline-company">Company Name</span>
-                            <span class="timeline-duration">2022 - Present</span>
+                            <h3 class="timeline-title">Senior Software Engineer</h3>
+                            <span class="timeline-company">Causify</span>
+                            <span class="timeline-duration">Aug 2023 - Present</span>
                         </div>
                         <div class="timeline-details">
                             <ul>
-                                <li>Developed autonomous navigation systems for mobile robots</li>
-                                <li>Implemented computer vision algorithms for object detection</li>
-                                <li>Optimized path planning algorithms improving efficiency by 40%</li>
+                                <li>Integrated the CCXT API using asynchronous programming and REST protocols to efficiently place orders, fetch trades
+                                    and balances, and cancel orders, optimizing performance for high-frequency trading while ensuring seamless
+                                    multi-exchange integration.</li>
+                                <li>Engineered a zero-latency data extraction pipeline for real-time AI model training and prediction in high-frequency
+                                    trading, ensuring seamless data flow with minimal latency. Developed multiple Airflow DAGs for QA processes and
+                                    optimized data migration from RDS to S3 using ELT and ETL pipelines, achieving an 80% cost reduction.</li>
+                                <li>Developed and maintained a CI/CD pipeline for seamless deployment of Airflow DAGs in production, incorporating unit
+                                    tests, version control with GitHub, and automated Slack notifications for failure alerts, ensuring robust data workflows.</li>
+                                <li>Implemented a log replay class to enable advanced testing of broker behavior by sequentially replaying experiment logs,
+                                    simulating interactions with CCXT Exchange using logged data for accurate and reproducible testing scenarios.</li>
                             </ul>
                             <div class="achievements">
                                 <h4>Key Achievements</h4>
@@ -106,15 +113,18 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3 class="timeline-title">Software Developer</h3>
-                            <span class="timeline-company">Previous Company</span>
-                            <span class="timeline-duration">2020 - 2022</span>
+                            <h3 class="timeline-title">Autonomous Vehicle Software Engineer</h3>
+                            <span class="timeline-company">ThorDrive</span>
+                            <span class="timeline-duration">May 2022 - March 2023</span>
                         </div>
                         <div class="timeline-details">
                             <ul>
-                                <li>Led development of real-time control systems</li>
-                                <li>Designed and implemented ROS-based solutions</li>
-                                <li>Collaborated with cross-functional teams on robotics projects</li>
+                                <li>Developed a ROS package in C++ for trailer path prediction, achieving an accuracy of 98.1%. Converted this package
+                                    into a collision avoidance system, enabling our ego vehicle to safely maneuver with up to 5 trailers without collisions.</li>
+                                <li>Created package for adaptive destination using custom A* algorithm which found path in 15 iterations and 1.464 seconds
+                                    as compared to 5666 iterations and 14.647 seconds required by tradition Hybrid-A* for the same scenario.</li>
+                                <li>Hands-on experience in implementing the gen-1 path-planning pipeline of the company which gave an overall 27% better
+                                    performance in KPIs. With an addition fail-safe pipeline handled 100 more hardware and software fail case scenarios</li>
                             </ul>
                             <div class="achievements">
                                 <h4>Key Achievements</h4>
@@ -132,24 +142,23 @@
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3 class="timeline-title">Research Assistant</h3>
-                            <span class="timeline-company">University Lab</span>
-                            <span class="timeline-duration">2019 - 2020</span>
+                            <h3 class="timeline-title">Research Scientist</h3>
+                            <span class="timeline-company">United States Department of Agriculture</span>
+                            <span class="timeline-duration">Feb 2023 - Nov 2023</span>
                         </div>
                         <div class="timeline-details">
                             <ul>
-                                <li>Conducted research on autonomous navigation</li>
-                                <li>Published papers in robotics conferences</li>
-                                <li>Developed prototype systems for testing</li>
+                                <li>Worked on NSGA-II , Multi-objective PSO and MOCNN for optimization of EPIC model which gave an RMSE of 0.11.</li>
+                                <li>Implemented Particle Swarm Optimization Algorithm for model calibration using remote-sensing data.</li>
                             </ul>
-                            <div class="achievements">
+                            <!-- <div class="achievements">
                                 <h4>Key Achievements</h4>
                                 <ul>
                                     <li>Published research was cited in 10+ academic papers</li>
                                     <li>Developed a novel approach to path planning</li>
                                     <li>Received outstanding research assistant award</li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -160,82 +169,52 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <!-- Featured Project -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="path/to/fitness-image.jpg" alt="Apple Fitness+">
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title">Project Name</h2>
-                    <p class="project-description">Brief description of the project and its key features.</p>
-                    <div class="project-buttons">
-                        <a href="#" class="project-btn btn-primary">Learn more</a>
-                        <a href="#" class="project-btn btn-secondary">View Demo</a>
+            <h2 class="section-title" style="color: var(--text-light);">Featured Projects</h2>
+            <div class="project-section">
+                <div class="project-container">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-background">
+                            <img src="Images/collection.gif" alt="Project 1">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-content">
+                                <h3>Autonomous Warehouse Collection Robot</h3>
+                                <p class="project-category">Robotics • ROS & C++</p>
+                                <div class="project-description">
+                                    <p>Implemented SLAM and AMCL for navigation and localization, alongside various path planning algorithms (Dijkstra, A, RRT, etc.) to enhance efficiency.</p>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="https://github.com/Sameep2808/gas?tab=readme-ov-file#working" class="project-btn">View Demo</a>
+                                    <a href="https://github.com/Sameep2808/gas" class="project-btn">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-background">
+                            <img src="path/to/your/project2.gif" alt="Project 2">
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-content">
+                                <h3>Trading Pipeline</h3>
+                                <p class="project-category">Software • Python & AWS</p>
+                                <div class="project-description">
+                                    <p>Built a zero-latency data extraction pipeline for real-time AI model training in high-frequency trading using AWS and Python.</p>
+                                </div>
+                                <div class="project-actions">
+                                    <a href="#" class="project-btn">View Demo</a>
+                                    <a href="https://github.com/yourusername/project2" class="project-btn">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more project cards as needed -->
                 </div>
             </div>
-
-            <!-- Regular Project Cards -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="path/to/ipad-image.jpg" alt="iPad Air">
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title">Project Name</h2>
-                    <p class="project-description">Brief description of the project.</p>
-                    <div class="project-buttons">
-                        <a href="#" class="project-btn btn-primary">Learn more</a>
-                        <a href="#" class="project-btn btn-secondary">View Demo</a>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Regular Project Cards -->
-             <div class="project-card">
-                <div class="project-image">
-                    <img src="path/to/ipad-image.jpg" alt="iPad Air">
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title">Project Name</h2>
-                    <p class="project-description">Brief description of the project.</p>
-                    <div class="project-buttons">
-                        <a href="#" class="project-btn btn-primary">Learn more</a>
-                        <a href="#" class="project-btn btn-secondary">View Demo</a>
-                    </div>
-                </div>
-            </div>
-
-             <!-- Regular Project Cards -->
-             <div class="project-card">
-                <div class="project-image">
-                    <img src="path/to/ipad-image.jpg" alt="iPad Air">
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title">Project Name</h2>
-                    <p class="project-description">Brief description of the project.</p>
-                    <div class="project-buttons">
-                        <a href="#" class="project-btn btn-primary">Learn more</a>
-                        <a href="#" class="project-btn btn-secondary">View Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Regular Project Cards -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="path/to/ipad-image.jpg" alt="iPad Air">
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title">Project Name</h2>
-                    <p class="project-description">Brief description of the project.</p>
-                    <div class="project-buttons">
-                        <a href="#" class="project-btn btn-primary">Learn more</a>
-                        <a href="#" class="project-btn btn-secondary">View Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Add more project cards as needed -->
         </div>
     </section>
 
@@ -247,7 +226,7 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        <a href="mailto:sameepote2808@gmail.com">sameepote2808@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-github"></i>
@@ -255,7 +234,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-linkedin"></i>
-                        <a href="your-linkedin-url" target="_blank">LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/sameepote/" target="_blank">LinkedIn</a>
                     </div>
                 </div>
             </div>
@@ -277,10 +256,42 @@
             navbar.classList.remove('scrolled');
         }
     });
-    </script>
 
-    <a href="Resume_2024.pdf" class="floating-download" download title="Download Resume">
-        <i class="fas fa-file-download"></i>
-    </a>
+    document.addEventListener('DOMContentLoaded', function() {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        timelineItems.forEach(item => {
+            const content = item.querySelector('.timeline-content');
+            const overlay = item.querySelector('.timeline-overlay');
+            const closeBtn = item.querySelector('.close-expanded');
+            
+            content.addEventListener('click', function(e) {
+                e.stopPropagation();
+                content.classList.add('active');
+            });
+            
+            closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                content.classList.remove('active');
+            });
+            
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    content.classList.remove('active');
+                }
+            });
+        });
+
+        // New functionality for "Learn more" button
+        const learnMoreButtons = document.querySelectorAll('.learn-more');
+        learnMoreButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                const projectDetails = button.closest('.project-content').querySelector('.project-details');
+                projectDetails.style.display = projectDetails.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    });
+    </script>
 </body>
 </html> 

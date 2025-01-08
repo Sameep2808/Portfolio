@@ -208,146 +208,128 @@ section {
 
 /* Projects Section */
 .projects {
-    background-color: var(--background-color);
-    padding: 4rem 0;
+    background-color: var(--background-dark);
+    padding: 6rem 0;
+    position: relative;
 }
 
-.projects .container {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1400px;
-    padding: 0 2rem;
+    margin-top: 3rem;
 }
 
 .project-card {
     position: relative;
-    background: white;
-    border-radius: 20px;
+    border-radius: 1rem;
     overflow: hidden;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    text-align: center;
+    aspect-ratio: 16/9;
+    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-/* Make first project card span full width */
-.project-card:first-child {
-    grid-column: 1 / -1;
-    min-height: 500px;
-}
-
-.project-image {
-    width: 100%;
-    height: 100%;
+.project-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-
-.project-image img {
     width: 100%;
     height: 100%;
+}
+
+.project-background img {
+    width: 100%;
+    height: auto;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
 }
 
 .project-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
 }
 
-.project-title {
-    font-family: var(--font-heading);
-    font-size: 2.5rem;
-    font-weight: 600;
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card:hover .project-content {
+    transform: translateY(0);
+}
+
+.project-card:hover .project-background img {
+    transform: scale(1.1);
+}
+
+.project-content h3 {
+    color: white;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color);
+    font-family: var(--font-heading);
+}
+
+.project-category {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 .project-description {
-    font-size: 1.2rem;
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
+    max-width: 90%;
 }
 
-.project-buttons {
+.project-actions {
     display: flex;
     gap: 1rem;
-    justify-content: center;
 }
 
 .project-btn {
     padding: 0.8rem 1.5rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
+    border-radius: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
-}
-
-.btn-secondary {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .project-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: var(--primary-color);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .projects .container {
+@media (max-width: 768px) {
+    .project-grid {
         grid-template-columns: 1fr;
     }
 
-    .project-card {
-        min-height: 350px;
-    }
-
-    .project-card:first-child {
-        min-height: 400px;
-    }
-
-    .project-title {
-        font-size: 2rem;
+    .project-content h3 {
+        font-size: 1.5rem;
     }
 
     .project-description {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects {
-        padding: 2rem 0;
-    }
-
-    .project-card {
-        min-height: 300px;
-    }
-
-    .project-title {
-        font-size: 1.8rem;
-    }
-
-    .project-description {
-        font-size: 1rem;
-    }
-
-    .project-buttons {
-        flex-direction: column;
+        font-size: 0.8rem;
     }
 }
 
@@ -981,4 +963,73 @@ document.addEventListener('DOMContentLoaded', function() {
         text-align: center;
         justify-content: center;
     }
+}
+
+.project-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    color: var(--text-light); /* Change text color to light for better contrast */
+}
+
+.project-details {
+    display: block; /* Initially hidden */
+    transition: max-height 0.5s ease, opacity 0.5s ease; /* Transition for sliding effect */
+    max-height: 0; /* Start with max-height of 0 */
+    opacity: 0; /* Start with opacity of 0 */
+    overflow: hidden; /* Hide overflow */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 0 1rem; /* Padding for the details */
+    border-radius: 0 0 20px 20px; /* Rounded corners at the bottom */
+    position: relative; /* Position relative for absolute positioning of buttons */
+}
+
+.project-card:hover .project-details {
+    max-height: 200px; /* Set a max-height for the sliding effect */
+    opacity: 1; /* Fade in */
+    padding: 1rem; /* Add padding when visible */
+}
+
+.project-section {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents line breaks */
+    padding: 20px; /* Increased padding for better spacing */
+    max-width: 100%; /* Ensure it takes full width */
+}
+
+.project-container {
+    display: inline-flex; /* Allows items to be inline and maintain flex properties */
+}
+
+.project-card {
+    display: inline-block; /* Keeps project items in a row */
+    width: 500px; /* Increase the width for better visibility */
+    margin-right: 30px; /* Space between items */
+    transition: transform 0.3s ease; /* Maintain existing animation */
+}
+
+.project-background img {
+    width: 100%; /* Ensure the image fills the card */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Optional: Add a scrollbar style */
+.project-section::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.project-section::-webkit-scrollbar-thumb {
+    background: var(--secondary-color); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.project-section::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* Background of the scrollbar track */
+}
+
+.project-item {
+    display: inline-block; /* Keeps project items in a row */
+    width: 200px; /* Set a fixed width for each project item */
+    margin-right: 10px; /* Space between items */
+    /* Add any additional styling for project items */
 } 
