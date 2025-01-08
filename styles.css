@@ -1,0 +1,840 @@
+/* Base Styles */
+:root {
+    --primary-color: #002642;    /* Dark blue */
+    --secondary-color: #E63946;   /* Accent red for interactive elements */
+    --accent-color: #FFFFFF;     /* White for accents */
+    --text-color: #002642;       /* Dark blue for text */
+    --text-light: #F1FAEE;       /* Light color for text on dark backgrounds */
+    --background-color: #F5F5F5;  /* Light background with slight warmth */
+    --background-dark: #002642;   /* Dark background for sections */
+    --overlay-color: rgba(0, 38, 66, 0.85); /* Darker overlay */
+    --card-background: #FFFFFF;   /* Pure white for cards */
+    --section-padding: 1.5rem 0;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Add Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header Styles */
+.header {
+    position: relative;
+    height: 60vh;
+    background-color: var(--background-color);
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 2rem 4rem;
+    z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    background-color: rgba(0, 38, 66, 0.1);
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content p {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    min-width: 160px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+    font-family: var(--font-heading);
+    font-size: 16rem;
+    font-weight: 800;
+    color: rgba(0, 38, 66, 1);
+    white-space: nowrap;
+    z-index: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    opacity: 0.08;
+    letter-spacing: -0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .overlay-text {
+        font-size: 8rem;
+        right: -4%;
+        letter-spacing: -0.4rem;
+        opacity: 0.06;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
+/* Section Styles */
+section {
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.skill-tags span {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Projects Section */
+.projects {
+    background-color: var(--background-color);
+    padding: 4rem 0;
+}
+
+.projects .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    padding: 0 2rem;
+}
+
+.project-card {
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+/* Make first project card span full width */
+.project-card:first-child {
+    grid-column: 1 / -1;
+    min-height: 500px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.project-description {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.project-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--primary-color);
+    backdrop-filter: blur(10px);
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects .container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 350px;
+    }
+
+    .project-card:first-child {
+        min-height: 400px;
+    }
+
+    .project-title {
+        font-size: 2rem;
+    }
+
+    .project-description {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects {
+        padding: 2rem 0;
+    }
+
+    .project-card {
+        min-height: 300px;
+    }
+
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+}
+
+/* Contact Section */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.contact-info {
+    display: flex;
+    gap: 3rem;  /* Space between contact items */
+    align-items: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.contact-item i {
+    font-size: 1.3rem;  /* Slightly smaller icons */
+    color: var(--secondary-color);
+}
+
+.contact-item a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive design for contact section */
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Experience Section */
+.experience {
+    background-color: var(--background-color);
+    padding: 4rem 0;
+    position: relative;
+}
+
+.experience .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+/* Timeline Item */
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-right: calc(50% + 2rem);
+}
+
+.timeline-item:nth-child(even) {
+    padding-left: calc(50% + 2rem);
+}
+
+/* Timeline Content */
+.timeline-content {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Timeline Dot */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    top: 50%;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -3.5rem;
+    transform: translate(50%, -50%);
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -3.5rem;
+    transform: translate(-50%, -50%);
+}
+
+/* Content Styling */
+.timeline-header {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-company {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-duration {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Details Section */
+.timeline-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.timeline-details li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Hover Effects */
+.timeline-content {
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        padding: 0 0 0 4rem !important;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-content::before {
+        left: -2rem !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .timeline-title {
+        font-size: 1.4rem;
+    }
+
+    .timeline-company {
+        font-size: 1rem;
+    }
+
+    .timeline-details li {
+        font-size: 0.95rem;
+    }
+}
+
+/* Menu toggle animation */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .overlay-text {
+        font-size: 8rem;
+        right: -4%;
+        letter-spacing: -0.4rem;
+        opacity: 0.06;
+    }
+
+    .hero-content {
+        padding: 2rem;
+    }
+
+    .timeline::before {
+        top: 50%;
+    }
+    
+    .timeline-marker {
+        top: 50%;
+    }
+    
+    .timeline-content {
+        width: 300px;
+    }
+
+    .timeline-container {
+        padding: 2rem 0;
+    }
+}
+
+/* Add hover effects */
+.btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -30%); opacity: 0; }
+    to { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+/* Geometric shapes */
+.shape {
+    position: absolute;
+    background-color: var(--secondary-color);
+}
+
+.shape-square {
+    width: 100px;
+    height: 100px;
+    top: 20%;
+    left: -50px;
+    background: white;
+}
+
+.shape-rectangle {
+    width: 200px;
+    height: 150px;
+    bottom: 10%;
+    right: -100px;
+    background: white;
+}
+
+/* Update About Section spacing */
+.about-text h2 {
+    margin-bottom: 1rem;  /* Reduced from default */
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;  /* Reduced from 2rem */
+    line-height: 1.8;     /* Increase line height for better readability */
+}
+
+.skills {
+    margin-top: 1.5rem;  /* Reduced from 2rem */
+}
+
+.skills h3 {
+    margin-bottom: 1rem;  /* Reduced from 1.5rem */
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.skill-tags {
+    margin-top: 1.5rem;    /* Increase from 1rem */
+}
+
+/* Add button group styling */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .overlay-text {
+        font-size: 14rem;
+        right: -8%;
+        opacity: 0.07;
+    }
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+/* Container for all timeline items */
+.timeline-container {
+    display: flex;
+    padding: 3rem 0;
+    position: relative;
+}
+
+/* Update responsive design */
+@media (max-width: 768px) {
+    .timeline::before {
+        top: 50%;
+    }
+    
+    .timeline-marker {
+        top: 50%;
+    }
+    
+    .timeline-content {
+        width: 300px;
+    }
+
+    .timeline-container {
+        padding: 2rem 0;
+    }
+}
+
+/* Active state for click expansion */
+.timeline-content.active + .timeline-overlay {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.timeline-content.active + .timeline-overlay .timeline-expanded {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Close button */
+.close-expanded {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0.5rem;
+}
+
+/* Timeline marker with logo */
+.timeline-item:nth-child(odd) .company-logo {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: -30px;
+}
+
+.timeline-item:nth-child(even) .company-logo {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: -30px;
+}
+
+/* Company logo positioning */
+.timeline-item .company-logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background: white;
+    border: 3px solid var(--secondary-color);
+    z-index: 3;
+}
+
+.timeline-expanded .company-logo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1.5rem;
+}
+
+/* Add this JavaScript for better interaction */
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    timelineItems.forEach(item => {
+        const content = item.querySelector('.timeline-content');
+        const overlay = item.querySelector('.timeline-overlay');
+        const closeBtn = item.querySelector('.close-expanded');
+        
+        content.addEventListener('click', function(e) {
+            e.stopPropagation();
+            content.classList.add('active');
+        });
+        
+        closeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            content.classList.remove('active');
+        });
+        
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                content.classList.remove('active');
+            }
+        });
+    });
+});
+</script> 
