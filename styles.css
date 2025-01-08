@@ -968,7 +968,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .project-content {
     position: relative;
     z-index: 2;
-    max-width: 600px;
+    max-width: 700px;
     color: var(--text-light); /* Change text color to light for better contrast */
 }
 
@@ -993,8 +993,8 @@ document.addEventListener('DOMContentLoaded', function() {
 .project-section {
     overflow-x: auto; /* Enables horizontal scrolling */
     white-space: nowrap; /* Prevents line breaks */
-    padding: 20px; /* Increased padding for better spacing */
-    max-width: 100%; /* Ensure it takes full width */
+    /* padding: 20px; Increased padding for better spacing */
+    /* max-width: 100%; Ensure it takes full width */
 }
 
 .project-container {
@@ -1003,7 +1003,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .project-card {
     display: inline-block; /* Keeps project items in a row */
-    width: 500px; /* Increase the width for better visibility */
+    width: 700px; /* Increase the width for better visibility */
     margin-right: 30px; /* Space between items */
     transition: transform 0.3s ease; /* Maintain existing animation */
 }
